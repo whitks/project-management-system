@@ -1,0 +1,77 @@
+.full-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mt-100{
+    margin-top:100px;
+}
+.full-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #4c9aff;
+  height: 40vh;
+  min-height: 250px;
+  min-width: 450px;
+  width: 25vw;
+  border-radius: 16px;
+  padding: 50px 20px;
+  background:white;
+  box-shadow: 0 8px 20px rgba(173, 216, 230, 0.35);
+  transition: box-shadow 0.3s ease;
+}
+
+.full-form form:hover {
+  box-shadow: 0 12px 28px rgba(173, 216, 230, 0.5); 
+}
+
+.full-form form input {
+  height: 40px;
+  width: 21vw;
+  min-width: 200px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.full-form form input:focus {
+  outline: none;
+  border: 1px solid #4c9aff;
+  box-shadow: 0 0 5px rgba(76, 154, 255, 0.4);
+}
+
+.full-form form button {
+  width: 21vw;
+  min-width: 200px;
+  border-radius: 10px;
+  border: none;
+  height: 50px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: 30px;
+  background: linear-gradient(to right, #a583f4, #f580d4);
+  color: white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.full-form form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(161, 140, 209, 0.4);
+}
+#submit-button{
+    background: #a583f4;
+    color:white;
+    cursor:pointer;
+}
+
+html, body { height: 100%; }
+body {
+  background:radial-gradient(ellipse at center, rgba(255,254,234,1) 0%, rgb(250, 232, 255) 35%, #f1eaff 100%);
+  overflow: hidden;
+}
+
