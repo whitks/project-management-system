@@ -5,12 +5,16 @@
   padding: 1.3rem;
   align-items: center;
   justify-content: space-between;
-  color:black;;
+  color:black;
   background-color: transparent;
 }.logo h1{
-  font-weight: 170;
+  font-weight: 400;
   font-size: 2rem;
   font-family: "Inter", sans-serif;
+}
+a{
+  text-decoration: none;
+  color:black;
 }
 .right-nav ul{
   display:flex;
@@ -19,10 +23,10 @@
   gap:30px;
 }
 .right-nav ul li{
-  font-weight: 240;
+  font-weight: 400;
   cursor:pointer;
   font-family: "Inter", sans-serif;
 }
 .right-nav ul li:hover{
-  font-weight: 310;
+  font-weight: 405;
 }
