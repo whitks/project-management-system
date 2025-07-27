@@ -1,20 +1,64 @@
 import React from 'react'
 import "./styles/login.css"
 import { useGoogleLogin } from '@react-oauth/google';
+import { useState } from 'react';
 function Login() {
+    const [email, setEmail] = useState("")
+    const [error, setError] = useState("")
     const login = useGoogleLogin({
-    onSuccess: tokenResponse => console.log(tokenResponse),
-  });
+      onSuccess: tokenResponse => handleGoogleLogin(tokenResponse.access_token),
+      onError: error => {
+    console.error("Google Login Error:", error);
+    setError("Google login failed. Try again.");
+  }
+    });
+    async function handleGoogleLogin(access_token){
 
+      const response = await fetch("http://localhost/another/login.php", {
+        method: "POST",
+        headers:{"Content-Type": "application/json"},
+        body:JSON.stringify({googleLogin:true, access_token})
+      })
+      const result = await response.text();
+      console.log(result)
+    }
+    function handleChange(e){
+      setEmail(e.target.value)
+      setError(false)
+    }
+    async function onSubmit(e){
+      e.preventDefault()
+      setError("")
+      setEmail(prev=>prev.trim())
+      let template = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if(!email | !template.test(email)){
+        setError("Please enter a valid email address.")
+        return
+      }
+      else if(!(email.endsWith("@skit.ac.in"))){
+        setError("Please enter college email.")
+        return
+      }
+      const response = await fetch("http://localhost/another/login.php", {
+        method: "POST",
+          headers: {
+        "Content-Type": "application/json"
+          },
+        body: JSON.stringify({ googleLogin:false, email })
+      })
+      const result = await response.json()
+      console.log(result)
+    }
   return (
     <div className='full-form mt-100'>
-      <form action="" >
+      <form action="">
           <h1>Login</h1>
-        <input type="text" placeholder='Enter Email' required/>
+          <p style={{color: 'red'}}>{error?error:""}</p>
+        <input type="text" value = {email} placeholder='Enter Email' onChange={handleChange}/>
 
-        <input type="submit" id = "submit-button"/>
+        <input type="submit" onClick={onSubmit} id = "submit-button"/>
 
-        <button onClick={() => login()}> <i class="fa-brands fa-google"></i> Sign in with Google</button>
+        <button onClick={(e) => {e.preventDefault(); login()}}> <i class="fa-brands fa-google"></i> Sign in with Google</button>
       </form>
         </div>
       )

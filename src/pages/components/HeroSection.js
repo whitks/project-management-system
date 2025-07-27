@@ -1,6 +1,5 @@
 import React from 'react'
 import "./styles/herosection.css"
-import Login from './Login'
 import {useNavigate} from "react-router-dom"
 import image from "../assets/3.svg"
 function HeroSection() {
@@ -11,7 +10,7 @@ function HeroSection() {
   return (
     <>
     <div className='herosection'>
-      <div className='content'>
+      <div className='herosection-content'>
       <h1 id ="main-text">Project Management for Students</h1>
       <p>An integrated portal for final‑year projects. Coordinate teams, track milestones, and handle submissions from one intuitive dashboard—so you can focus on innovation, not administration.</p>
         <button onClick={handleClick}>Lets Go</button></div>

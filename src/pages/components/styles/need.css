@@ -1,0 +1,20 @@
+.need{
+    display: flex;
+    margin-top: 100px;
+}
+.need-content{
+    width:50vw;
+    padding:100px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.need-content h1{
+    font-size: 3rem;
+}
+.need-content p{
+    font-size: 1.55rem;
+}
+.need img{
+    height:70vh;
+}
