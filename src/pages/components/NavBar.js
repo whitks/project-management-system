@@ -3,8 +3,8 @@ import "./styles/navbar.css"
 import { Link } from 'react-router-dom'
 function NavBar() {
   return (
-    <div className='nav'>
-        <div className="navbar">
+    <div className='nav-1'>
+        <div className="navbar-nor">
                     <div className="logo">
                         <h1>Connspace</h1>
                     </div>

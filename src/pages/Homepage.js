@@ -13,7 +13,6 @@ function Homepage() {
         <Features/>
         <Need/>
         <Faq/>
-        <div style={{ height: '100px', background: 'lightgray' }}>Placeholder</div>
     </div>
   )
 }

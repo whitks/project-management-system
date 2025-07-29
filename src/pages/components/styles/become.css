@@ -1,0 +1,37 @@
+.become{
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  margin-top: 120px;
+}
+.become-card{
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  align-items: center;
+  border: 1px solid #4c9aff;
+  justify-content: center;
+  margin: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  width: 25vw;
+  min-width:250px;
+  cursor: pointer;
+  color:rgb(57, 57, 57);
+  background-color: white;
+  transition: all 0.1s ease-out;
+  box-shadow: 5px 10px 26px rgb(194, 219, 237);
+
+}
+.vl {
+  border-left: 2px solid rgb(76, 98, 114);
+  height: 230px;
+  margin-top: 10px; 
+}
+
+.become-card:hover{
+    transform: scale(1.06);
+}
+.become-card img{
+  height: 130px
+}

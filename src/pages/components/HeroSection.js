@@ -1,4 +1,4 @@
-import React from 'react'
+  import React from 'react'
 import "./styles/herosection.css"
 import {useNavigate} from "react-router-dom"
 import image from "../assets/3.svg"

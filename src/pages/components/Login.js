@@ -2,9 +2,11 @@ import React from 'react'
 import "./styles/login.css"
 import { useGoogleLogin } from '@react-oauth/google';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 function Login() {
     const [email, setEmail] = useState("")
     const [error, setError] = useState("")
+    const navigate = useNavigate()
     const login = useGoogleLogin({
       onSuccess: tokenResponse => handleGoogleLogin(tokenResponse.access_token),
       onError: error => {
@@ -47,7 +49,8 @@ function Login() {
         body: JSON.stringify({ googleLogin:false, email })
       })
       const result = await response.json()
-      console.log(result)
+      localStorage.setItem("id", result.id)
+      navigate("initials")
     }
   return (
     <div className='full-form mt-100'>

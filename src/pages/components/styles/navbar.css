@@ -1,12 +1,12 @@
 
-.navbar{
-  display: flex;
-  height: 2vh;
-  padding: 1.3rem;
-  align-items: center;
-  justify-content: space-between;
-  color:black;
-  background-color: transparent;
+.navbar-nor{
+  display: flex !important;
+  height: 2vh !important;
+  align-items: center !important;
+  padding:  1.89rem 1.3rem !important;
+  justify-content: space-between !important;
+  color:black !important;
+  background-color: transparent !important;
 }.logo h1{
   font-weight: 400;
   font-size: 2rem;
