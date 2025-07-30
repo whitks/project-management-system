@@ -1,10 +1,10 @@
 import React from 'react'
 import "./styles/navbar.css"
 import { Link } from 'react-router-dom'
-function NavBar() {
+function NavBar(props) {
   return (
     <div className='nav-1'>
-        <div className="navbar-nor">
+        <div className="navbar-nor" style={{backgroundColor: props.back, color: props.colo}}>
                     <div className="logo">
                         <h1>Connspace</h1>
                     </div>

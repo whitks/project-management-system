@@ -1,1 +1,24 @@
 
+.wave-layer-1 {
+  fill: #b3696c;
+  opacity: 0.55;
+  animation: move-wave-1 5s ease-in-out infinite;
+}
+
+.wave-layer-2 {
+  fill: #b3696c;
+  opacity: 0.35;
+  animation: move-wave-2 4s ease-in-out infinite;
+}
+
+@keyframes move-wave-1 {
+  0% { transform: translateX(-500px) scaleX(2.5); }
+  50% { transform: translateX(0) scaleX(2.5); }
+  100% { transform: translateX(-500px) scaleX(2.5); }
+}
+
+@keyframes move-wave-2 {
+  0% { transform: translateX(-600px) scaleX(3); }
+  50% { transform: translateX(0) scaleX(3); }
+  100% { transform: translateX(-600px) scaleX(3); }
+}

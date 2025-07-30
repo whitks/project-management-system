@@ -2,7 +2,6 @@
   display:flex;
   justify-content: center;
   align-items:center;
-  margin-top: 120px;
 }
 .become-card{
   display: flex;
@@ -35,3 +34,4 @@
 .become-card img{
   height: 130px
 }
+

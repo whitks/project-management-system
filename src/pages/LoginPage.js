@@ -6,8 +6,10 @@ import NavBar from './components/NavBar.js'
 function login() {
   return (
     <>
-    <NavBar></NavBar>
+    <NavBar back = {"black"} colo="white"/>
+    
     <div className='login-page'>
+      
       <img src={cmcimage} />
       <Login/>
     </div></>

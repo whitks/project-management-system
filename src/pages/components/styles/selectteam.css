@@ -1,0 +1,34 @@
+.select-team{
+   display:flex;
+  justify-content: center;
+  align-items:center;
+}
+.initials-search{
+       display:flex;
+       gap:20px;
+       position: relative;
+}
+.initials-search input{
+    height: 50px;
+    width:30vw;
+    border: 1px solid #4c9aff;
+    border-radius: 12px;
+    font-size:25px;
+    padding:0px 15px;
+}
+.initials-search input:focus{
+    outline: none;
+  border: 1px solid #4c9aff;
+  box-shadow: 0 0 5px rgba(76, 154, 255, 0.4);
+}
+.initials-search svg{
+    cursor:pointer;
+    position: absolute;
+    right:5px;
+    top:5px;
+}
+
+
+.initials-team{
+
+}
