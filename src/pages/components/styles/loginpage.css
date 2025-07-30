@@ -11,3 +11,8 @@
     margin-right:70px;
     background-color: rgb(76, 98, 114);
 }
+@media screen and (max-width: 768px) {
+.login-page img{
+    display:none;
+  }
+}

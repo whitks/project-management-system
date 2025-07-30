@@ -19,14 +19,18 @@ function Login() {
       const response = await fetch("http://localhost/another/login.php", {
         method: "POST",
         headers:{"Content-Type": "application/json"},
+        credentials: 'include',
         body:JSON.stringify({googleLogin:true, access_token})
       })
-      const result = await response.text();
-      console.log(result)
+      const result = await response.json();
+      if (result.status === 'Authorization failed'){
+        setError("Authorization failed. Try again Later");
+      }
+      navigate("initials")
     }
     function handleChange(e){
       setEmail(e.target.value)
-      setError(false)
+      setError("")
     }
     async function onSubmit(e){
       e.preventDefault()
@@ -46,10 +50,13 @@ function Login() {
           headers: {
         "Content-Type": "application/json"
           },
+          credentials: 'include',
         body: JSON.stringify({ googleLogin:false, email })
       })
       const result = await response.json()
-      localStorage.setItem("id", result.id)
+      if (result.status === 'Authorization failed'){
+        setError("Authorization failed. Try again Later")
+      }
       navigate("initials")
     }
   return (
