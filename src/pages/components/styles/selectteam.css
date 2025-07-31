@@ -1,7 +1,13 @@
 .select-team{
-   display:flex;
-  justify-content: center;
-  align-items:center;
+  display: flex; 
+  align-items: center;
+  flex-direction: column;
+}
+.selectteam-content{
+  margin-top: 30vh;
+  display:flex;
+  align-items: center;
+  flex-direction: column;
 }
 .initials-search{
        display:flex;
@@ -28,7 +34,62 @@
     top:5px;
 }
 
+.all-members{
+  width: 10vw;
+  min-width: 200px;
+  border-radius: 10px;
+  border: none;
+  height: 50px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: 30px;
+  background: linear-gradient(to right, #4c6ae0, #3d5fe4);
+  color: white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-.initials-team{
+.all-members:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(161, 140, 209, 0.4);
+}
 
+.modal-header {
+  padding: 2px 16px;
+  background-color: #ffffff;
+  color: black;
+}
+
+.modal-body {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2px 16px;
+  border: 1px solid black;
+  justify-content: center;
+  margin-bottom: 3px;
+}
+.modal-content {
+  position: absolute;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  height: 90vh;
+  top:10;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+.close{
+  cursor:pointer;
+  font-size: 1.5rem;
+}
+/* Add Animation */
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+.modal-body-tr td{
+  padding: 0px 15px;
 }

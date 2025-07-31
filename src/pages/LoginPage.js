@@ -6,7 +6,7 @@ import NavBar from './components/NavBar.js'
 function login() {
   return (
     <>
-    <NavBar back = {"black"} colo="white"/>
+    <NavBar back = {"#2d378f"} colo="white"/>
     
     <div className='login-page'>
       

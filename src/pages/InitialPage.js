@@ -7,7 +7,7 @@ function InitialPage() {
   const [currPoint, setCurrPoint] = useState(1)
   return (
     <div>
-      <NavBar back = {"black"} colo = {"white"}/>
+      <NavBar back = {"#2d378f"} colo = {"white"}/>
       <div className="initials-container">
       {currPoint == 1&&
       <Become setCurrPoint = {setCurrPoint}/>}
