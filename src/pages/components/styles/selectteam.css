@@ -4,7 +4,7 @@
   flex-direction: column;
 }
 .selectteam-content{
-  margin-top: 30vh;
+  margin-top: 10vh;
   display:flex;
   align-items: center;
   flex-direction: column;
@@ -58,15 +58,20 @@
   padding: 2px 16px;
   background-color: #ffffff;
   color: black;
+  position: sticky;
+  top:0;
 }
 
 .modal-body {
   display: flex;
   flex-wrap: wrap;
   padding: 2px 16px;
-  border: 1px solid black;
   justify-content: center;
   margin-bottom: 3px;
+}
+.modal-body table td{
+    border-bottom: 1px solid black;
+  padding: 20px 4vw;
 }
 .modal-content {
   position: absolute;
@@ -74,6 +79,7 @@
   margin: auto;
   padding: 0;
   border: 1px solid #888;
+    overflow: scroll;
   width: 80%;
   height: 90vh;
   top:10;
@@ -91,5 +97,62 @@
   to {top: 0; opacity: 1}
 }
 .modal-body-tr td{
-  padding: 0px 15px;
+  padding: 0px 3vw;
+}
+.add-teammate{
+  display:flex;
+  align-items: center;
+  cursor:pointer;
+  border:none;
+  background-color: white;
+}
+.add-teammate:hover{
+  border:0px solid transparent;
+  border-radius: 10px;
+  background-color: #e6e6e6;
+}
+
+.cartprod {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr auto auto;
+    align-items: center;
+    gap: 20px;
+    padding: 0px 20px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    background: #fdfdfd;
+    width:  50vw;
+    max-width: 600px;
+    min-width: 200px;
+    margin: 20px 0px;
+    transition: transform 0.4s ease;
+}
+
+.cartprod:hover {
+    transform: scale(1.01);
+}
+.fname,
+.lname,
+.xemail {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.remove {
+    background-color: #3f61e4;
+    border: none;
+    color: white;
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    display:flex;
+    align-items: center;
+}
+
+.remove:hover {
+    background-color: #274ff1;
 }
