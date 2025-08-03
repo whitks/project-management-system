@@ -1,40 +1,45 @@
-.select-team{
-  display: flex; 
+.select-team {
+  display: flex;
   align-items: center;
   flex-direction: column;
 }
-.selectteam-content{
+
+.selectteam-content {
   margin-top: 10vh;
-  display:flex;
+  display: flex;
   align-items: center;
   flex-direction: column;
 }
-.initials-search{
-       display:flex;
-       gap:20px;
-       position: relative;
+
+.initials-search {
+  display: flex;
+  gap: 20px;
+  position: relative;
 }
-.initials-search input{
-    height: 50px;
-    width:30vw;
-    border: 1px solid #4c9aff;
-    border-radius: 12px;
-    font-size:25px;
-    padding:0px 15px;
+
+.initials-search input {
+  height: 50px;
+  width: 30vw;
+  border: 1px solid #4c9aff;
+  border-radius: 12px;
+  font-size: 25px;
+  padding: 0px 15px;
 }
-.initials-search input:focus{
-    outline: none;
+
+.initials-search input:focus {
+  outline: none;
   border: 1px solid #4c9aff;
   box-shadow: 0 0 5px rgba(76, 154, 255, 0.4);
 }
-.initials-search svg{
-    cursor:pointer;
-    position: absolute;
-    right:5px;
-    top:5px;
+
+.initials-search svg {
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }
 
-.all-members{
+.all-members {
   width: 10vw;
   min-width: 200px;
   border-radius: 10px;
@@ -59,7 +64,7 @@
   background-color: #ffffff;
   color: black;
   position: sticky;
-  top:0;
+  top: 0;
 }
 
 .modal-body {
@@ -69,90 +74,135 @@
   justify-content: center;
   margin-bottom: 3px;
 }
-.modal-body table td{
-    border-bottom: 1px solid black;
+
+.modal-body table td {
+  border-bottom: 1px solid black;
   padding: 20px 4vw;
 }
+
 .modal-content {
   position: absolute;
   background-color: #fefefe;
   margin: auto;
   padding: 0;
   border: 1px solid #888;
-    overflow: scroll;
+  overflow: scroll;
   width: 80%;
   height: 90vh;
-  top:10;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  top: 10;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   animation-name: animatetop;
   animation-duration: 0.4s;
 }
-.close{
-  cursor:pointer;
+
+.close {
+  cursor: pointer;
   font-size: 1.5rem;
 }
+
 /* Add Animation */
 @keyframes animatetop {
-  from {top: -300px; opacity: 0}
-  to {top: 0; opacity: 1}
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
 }
-.modal-body-tr td{
+
+.modal-body-tr td {
   padding: 0px 3vw;
 }
-.add-teammate{
-  display:flex;
+
+.add-teammate {
+  display: flex;
   align-items: center;
-  cursor:pointer;
-  border:none;
+  cursor: pointer;
+  border: none;
   background-color: white;
 }
-.add-teammate:hover{
-  border:0px solid transparent;
+
+.add-teammate:hover {
+  border: 0px solid transparent;
   border-radius: 10px;
   background-color: #e6e6e6;
 }
 
 .cartprod {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr auto auto;
-    align-items: center;
-    gap: 20px;
-    padding: 0px 20px;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-    background: #fdfdfd;
-    width:  50vw;
-    max-width: 600px;
-    min-width: 200px;
-    margin: 20px 0px;
-    transition: transform 0.4s ease;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr auto auto;
+  align-items: center;
+  gap: 20px;
+  padding: 0px 20px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  background: #fdfdfd;
+  width: 50vw;
+  max-width: 600px;
+  min-width: 200px;
+  margin: 20px 0px;
+  transition: transform 0.4s ease;
 }
 
 .cartprod:hover {
-    transform: scale(1.01);
+  transform: scale(1.01);
 }
+
 .fname,
 .lname,
 .xemail {
-    font-size: 14px;
-    font-weight: 500;
-    color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
 }
 
 .remove {
-    background-color: #3f61e4;
-    border: none;
-    color: white;
-    font-size: 14px;
-    padding: 6px 12px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.2s ease;
-    display:flex;
-    align-items: center;
+  background-color: #3f61e4;
+  border: none;
+  color: white;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  display: flex;
+  align-items: center;
 }
 
 .remove:hover {
-    background-color: #274ff1;
+  background-color: #274ff1;
+}
+
+.modal-cart {
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  border-radius:10px;
+  margin: 0px 10px;
+  justify-content: center;
+  padding: 0px 5px 0px 20px;
+}
+
+.modal-cart p {
+  padding-top: 0px;
+}
+
+.modal-remove {
+  font-size: 5px;
+  padding: 8px 12px;
+    cursor: pointer;
+}
+
+.modal-top {
+  display: flex;
+}
+.submit-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  word-spacing: 2;
 }

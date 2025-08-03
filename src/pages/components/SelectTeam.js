@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Search, Plus, X } from 'lucide-react'
+import { Search, Plus, X, ArrowRight } from 'lucide-react'
 import "./styles/selectteam.css"
 function SelectTeam() {
   const [team, setTeam] = useState([]);
@@ -15,13 +15,27 @@ function SelectTeam() {
   function handleClose() {
     setShowModal(false)
   }
-  function handleAddMember(e, k) {
+  function handleRemoveMember(email){
+    if( team.length === 0 ){
+      return
+    }
+    setTeam( (prev)=>
+    prev.filter(
+      (ele)=>{
+        return ele.email !== email; 
+      }
+    ))
+  }
+  function handleAddMember(k) {
+    if(team.length === 4){
+      alert("You cannot add more than 4")
+      return
+    }
     setTeam(prev => {
       const member = people[k];
       return [...prev, member];
     });
-    e.currentTarget.disabled = true;
-    e.currentTarget.style.cursor = "default";
+
   }
   useEffect(() => {
     const fetchData = async () => {
@@ -36,7 +50,15 @@ function SelectTeam() {
     };
     fetchData();
   }, [])
-
+  async function handleSubmit(){
+        const response = await fetch("http://localhost/another/members.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: 'include'
+      })
+      const result = await response.json();
+      console.log(result);
+  }
   return (
     <div className='select-team'>
 
@@ -50,17 +72,28 @@ function SelectTeam() {
               <p>{index + 1}: </p>
               <p className='fname'>{x.firstname}</p>
               <p className='lname'>{x.lastname}</p>
-              <p className='xemail'>{x.email}</p> 
-              <span className="remove">
+              <p className='xemail'>{x.email}</p>
+              <span className="remove" onClick={() => handleRemoveMember(x.email)}>
                 <X />
               </span>
-            
+
             </div>
           ))}
         </div></div>
       {showModal && <div class="modal-content">
         <div class="modal-header">
-          <span class="close" onClick={handleClose}>&times;</span>
+            <span class="close" onClick={handleClose}>&times;</span>
+            <div className="modal-top">
+          {team.map((x, index) => (
+            <div key={index} className="modal-cart">
+              <p className='fname'>{x.firstname} {x.lastname}</p>
+              <span className="modal-remove" style={{display:"flex", justifyContent:"center", height:"18px"}} onClick={() => handleRemoveMember(x.email)}>
+                <X  size={18}/>
+              </span>
+
+            </div>
+          ))}</div>
+
           <h2>Add your Team members:</h2>
         </div>
         <div class="modal-body">
@@ -78,18 +111,21 @@ function SelectTeam() {
               {people.map((x, index) => (
                 // <p> {index + 1}: {x.firstname} {x.lastname}</p>
 
-                <tr key={index} className='modal-body-tr'>
+                <tr key={x.email} className='modal-body-tr'>
                   <td>{index + 1}</td>
                   <td>{x.firstname} {x.lastname}</td>
                   <td>{x.email}</td>
                   <td>{x.shift}</td>
-                  <td><button className="add-teammate" onClick={(e) => (handleAddMember(e, index))}><Plus /></button></td>
+                  <td> <button className="add-teammate"  disabled={team.some(member => member.email === x.email)} style={{
+  cursor: team.some(member => member.email === x.email) ? 'default' : 'pointer'
+}} onClick={() => (handleAddMember(index))}><Plus /></button></td>
                 </tr>
               ))}</tbody>
           </table>
         </div>
       </div>
       }
+      {team.length >0&&<button className='all-members submit-btn' onClick={handleSubmit}>Proceed <ArrowRight/> </button>}
     </div>
   )
 }
