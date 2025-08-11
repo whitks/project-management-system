@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Search, Plus, X, ArrowRight } from 'lucide-react'
 import "./styles/selectteam.css"
-function SelectTeam() {
-  const [team, setTeam] = useState([]);
+function SelectTeam({setCurrPoint, team, setTeam}) {
+
   const [search, setSearch] = useState('');
   const [people, setPeople] = useState([]);
   const [showModal, setShowModal] = useState(false);
@@ -27,8 +27,8 @@ function SelectTeam() {
     ))
   }
   function handleAddMember(k) {
-    if(team.length === 4){
-      alert("You cannot add more than 4")
+    if(team.length === 3){
+      alert("You cannot add more than 3")
       return
     }
     setTeam(prev => {
@@ -45,19 +45,12 @@ function SelectTeam() {
         credentials: 'include'
       })
       const result = await response.json();
-      console.log(result);
       setPeople(result.rows);
     };
     fetchData();
   }, [])
-  async function handleSubmit(){
-        const response = await fetch("http://localhost/another/members.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: 'include'
-      })
-      const result = await response.json();
-      console.log(result);
+  function handleSubmit(){
+    setCurrPoint(3)
   }
   return (
     <div className='select-team'>

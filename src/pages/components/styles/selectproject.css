@@ -1,0 +1,11 @@
+.selectproject {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.selectproject-content{
+    margin-top: 10vh;
+      display: flex;
+  align-items: center;
+  flex-direction: column;
+}
