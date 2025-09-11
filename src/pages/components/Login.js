@@ -23,8 +23,9 @@ function Login() {
         body:JSON.stringify({googleLogin:true, access_token})
       })
       const result = await response.json();
-      if (result.status === 'Authorization failed'){
+      if (result.status === 'failed'){
         setError("Authorization failed. Try again Later");
+        return
       }
       navigate("initials")
     }
@@ -54,9 +55,11 @@ function Login() {
         body: JSON.stringify({ googleLogin:false, email })
       })
       const result = await response.json()
-      if (result.status === 'Authorization failed'){
+      if (result.status === 'failed'){
         setError("Authorization failed. Try again Later")
+        return
       }
+      console.log(result)
       navigate("initials")
     }
   return (

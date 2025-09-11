@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import "./styles/selectproject.css"
-import { Search } from "lucide-react"
-function SelectProject() {
+import { Search,ArrowRight, X} from "lucide-react"
+function SelectProject({setCurrPoint, setProject} ) {
   const [search, setSearch] = useState("")
   const [projects, setProjects] = useState([])
   const [showModal, setShowModal] = useState(false)
@@ -41,6 +41,10 @@ function SelectProject() {
     const result = await response.json();
     setProjects(result.rows || []);
   }
+  function handleSubmit(){
+    setProject(selectedProject);
+    setCurrPoint(4);
+  }
   return (
     <div className='selectproject'>
       <div className="selectproject-content">
@@ -48,9 +52,14 @@ function SelectProject() {
       <div className='initials-search'><input type="text" value={search} onChange={handleChange} spellcheck="false" /><Search size={35} color='#257adcff' /></div>
       <button className='all-members' onClick={showAllProjects}> View all</button>
       <div className="selected">
-        {selectedProject
-          ? `Selected Project: ${selectedProject.project_name}`
-          : "Your project will appear here"}
+{selectedProject && (
+  <div className='initials-team'>
+    <div className="cartprod">
+      <p className='fname'>{selectedProject.id}</p>
+      <p className='lname'>{selectedProject.project_name}</p>
+    </div>
+  </div>
+)}
       </div>
       {showModal && <div class="modal-content">
         <div class="modal-header">
@@ -78,8 +87,13 @@ function SelectProject() {
               ))}</tbody>
           </table>
         </div>
+        
       </div>
-      }</div>
+      
+      }
+      
+      {selectedProject&&<button className='all-members submit-btn' onClick={handleSubmit}>Proceed <ArrowRight/> </button>}
+      </div>
     </div>
   )
 }
