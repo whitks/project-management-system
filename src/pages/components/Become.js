@@ -5,11 +5,11 @@ import coder from "../assets/coder.svg"
 
 function Become({setCurrPoint}) {
   function handleClick(param){
-    if (param == "leader"){
+    if (param === "leader"){
       setCurrPoint(2);
     }
-    else if(param == "member"){
-      setCurrPoint(0);
+    else if(param === "member"){
+      setCurrPoint(-1);
     }
   }
   return (

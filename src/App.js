@@ -5,6 +5,7 @@ import Homepage from './pages/Homepage';
 import Footer from './pages/components/Footer';
 import "./App.css"
 import InitialPage from './pages/InitialPage';
+import TeamDashboard from './pages/TeamDashboard'
 function App() {
   return (
     <Router>
@@ -23,6 +24,7 @@ function App() {
         <Route path="/login" element={<LoginPage/>}/>
         <Route path="/logout" element={<Logout setToken={1} />}/>
         <Route path="login/initials" element={<InitialPage />}/>
+        <Route path="/dashboard" element={<TeamDashboard />}/>
         {/* Search Page (Optional)
         <Route path="/product" element={<SearchPage />} /> */}
       </Routes>
