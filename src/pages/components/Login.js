@@ -3,10 +3,13 @@ import "./styles/login.css"
 import { useGoogleLogin } from '@react-oauth/google';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { loginSuccess } from '../../slices/userSlice';
 function Login() {
     const [email, setEmail] = useState("")
     const [error, setError] = useState("")
     const navigate = useNavigate()
+    const dispatch = useDispatch()
     const login = useGoogleLogin({
       onSuccess: tokenResponse => handleGoogleLogin(tokenResponse.access_token),
       onError: error => {
@@ -23,10 +26,13 @@ function Login() {
         body:JSON.stringify({googleLogin:true, access_token})
       })
       const result = await response.json();
+      console.log(result)
       if (result.status === 'failed'){
         setError("Authorization failed. Try again Later");
         return
       }
+      // dispatch login success to redux
+      try { dispatch(loginSuccess(result)); } catch (e) {}
       navigate("initials")
     }
     function handleChange(e){
@@ -60,6 +66,7 @@ function Login() {
         return
       }
       console.log(result)
+      try { dispatch(loginSuccess(result)); } catch (e) {}
       navigate("initials")
     }
   return (

@@ -1,0 +1,240 @@
+/* ================================
+   Weekly Form — Refined Horizontal UI
+   ================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg: #f9fafb;
+  --surface: #ffffff;
+  --border: #e5e7eb;
+  --text: #1e293b;
+  --text-light: #6b7280;
+  --primary: #2563eb;
+  --accent: #3b82f6;
+  --radius: 12px;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* Modal Container */
+.weekly-modal {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  width: 90%; /* wider modal */
+  max-width: 1000px; /* increase max width */
+  margin: 30px auto;
+  padding: 24px 28px; /* reduce height slightly by decreasing padding */
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.weekly-modal:hover {
+  transform: translateY(-1px);
+}
+
+.weekly-modal h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: -0.3px;
+  color: var(--text);
+}
+
+/* Form */
+.dashboard-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Form Fields */
+.dashboard-form-group label {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.dashboard-form-group input,
+.dashboard-form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: #fefefe;
+  color: var(--text);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.dashboard-form-group input:focus,
+.dashboard-form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.dashboard-form-group textarea {
+  min-height: 80px; /* decreased height */
+  resize: vertical;
+}
+
+/* Task List Section */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.task-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f9fafb;
+  border-radius: var(--radius);
+  padding: 8px 10px; /* slightly reduced padding */
+  border: 1px solid var(--border);
+  transition: background 0.2s;
+}
+
+.task-row:hover {
+  background: #f3f4f6;
+}
+
+.task-row input[type="text"] {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  padding: 6px;
+  color: var(--text);
+}
+
+.task-row input[type="text"]:focus {
+  outline: none;
+}
+
+.task-row button {
+  border: none;
+  background: none;
+  color: #ef4444;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.task-row button:hover {
+  color: #dc2626;
+}
+
+/* Add Task / Action Buttons */
+.task-controls {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.task-controls .btn {
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.task-controls .btn:hover {
+  background: var(--primary);
+  transform: translateY(-1px);
+}
+
+/* Submit Buttons */
+.dashboard-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.dashboard-form-actions button {
+  padding: 10px 16px;
+  border-radius: var(--radius);
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.dashboard-form-actions button[type="button"] {
+  background: transparent;
+  color: var(--text-light);
+}
+
+.dashboard-form-actions button[type="submit"] {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+
+.dashboard-form-actions button[type="submit"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 28px rgba(37, 99, 235, 0.15);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .weekly-modal {
+    width: 95%;
+    padding: 20px 24px;
+  }
+}
+
+@media (max-width: 720px) {
+  .weekly-modal {
+    padding: 16px 18px;
+  }
+  .dashboard-form-group textarea {
+    min-height: 70px;
+  }
+}
+/* AI Fill button next to Save */
+.ai-fill-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;       /* White background */
+  color: #ec4899;            /* Pink text/icon */
+  border: 1px solid #ec4899; /* Optional: pink border */
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.ai-fill-btn:hover {
+  background: #fce7f3;      /* Light pink on hover */
+  transform: translateY(-1px);
+}
+
+.ai-fill-btn .ai-icon {
+  font-weight: bold;
+  font-size: 16px;
+  color: #ec4899;            /* Pink plus */
+}

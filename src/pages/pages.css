@@ -1,0 +1,15 @@
+:root{
+  --page-gap:20px;
+}
+
+.page-forms{
+  padding:20px;
+}
+
+.page-forms h2{margin:0 0 12px 0}
+
+@media (max-width:900px){
+  .page-forms div[style*="gridTemplateColumns"]{
+    grid-template-columns:1fr !important;
+  }
+}

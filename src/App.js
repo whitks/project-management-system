@@ -6,6 +6,8 @@ import Footer from './pages/components/Footer';
 import "./App.css"
 import InitialPage from './pages/InitialPage';
 import TeamDashboard from './pages/TeamDashboard'
+import TeamInfo from './pages/TeamInfo';
+import ProjectFormsPage from './pages/ProjectFormsPage';
 function App() {
   return (
     <Router>
@@ -25,6 +27,8 @@ function App() {
         <Route path="/logout" element={<Logout setToken={1} />}/>
         <Route path="login/initials" element={<InitialPage />}/>
         <Route path="/dashboard" element={<TeamDashboard />}/>
+        <Route path="/team" element={<TeamInfo />}/>
+  <Route path="/forms" element={<ProjectFormsPage />}/>
         {/* Search Page (Optional)
         <Route path="/product" element={<SearchPage />} /> */}
       </Routes>

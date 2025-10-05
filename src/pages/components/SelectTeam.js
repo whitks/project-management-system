@@ -79,8 +79,8 @@ function SelectTeam({setCurrPoint, team, setTeam}) {
             <div className="modal-top">
           {team.map((x, index) => (
             <div key={index} className="modal-cart">
-              <p className='fname'>{x.firstname} {x.lastname}</p>
-              <span className="modal-remove" style={{display:"flex", justifyContent:"center", height:"18px"}} onClick={() => handleRemoveMember(x.email)}>
+              <p className='fname' style={{color:"white"}}>{x.firstname} {x.lastname}</p>
+              <span className="modal-remove" style={{display:"flex", justifyContent:"center", height:"18px", color:"white"}} onClick={() => handleRemoveMember(x.email)}>
                 <X  size={18}/>
               </span>
 
