@@ -20,7 +20,7 @@ function SelectProject({setCurrPoint, setProject} ) {
   }
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost/another/availableprojects.php", {
+      const response = await fetch("https://prback.ct.ws/another/availableprojects.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: 'include'
@@ -33,7 +33,7 @@ function SelectProject({setCurrPoint, setProject} ) {
   async function showAllProjects() {
     setShowModal(true);
     // If you want to always fetch fresh data:
-    const response = await fetch("http://localhost/another/availableprojects.php", {
+    const response = await fetch("https://prback.ct.ws/another/availableprojects.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: 'include'

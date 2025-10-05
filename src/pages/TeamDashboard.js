@@ -34,7 +34,7 @@ const TeamDashboard = () => {
 
   useEffect(() => {
     // Fetch latest week from backend
-    fetch("http://localhost/another/getLatestWeek.php", { method: "GET", credentials: "include" })
+    fetch("https://prback.ct.ws/another/getLatestWeek.php", { method: "GET", credentials: "include" })
       .then(res => res.json())
       .then(data => {
         if(data.status === 'success') setLatestWeek(data.latestWeek);
@@ -49,7 +49,7 @@ const TeamDashboard = () => {
     // determine week number
     const wkNum = week.week ?? week.id ?? Number((week.title || '').match(/\d+/)?.[0]);
     try {
-      const res = await fetch(`http://localhost/another/getWeeklyForm.php?week=${wkNum}`, { method: 'GET', credentials: 'include' });
+      const res = await fetch(`https://prback.ct.ws/another/getWeeklyForm.php?week=${wkNum}`, { method: 'GET', credentials: 'include' });
       const data = await res.json();
       console.log('Fetched weekly form for week', wkNum, data);
       if (data && data.status === 'success' && data.form) {

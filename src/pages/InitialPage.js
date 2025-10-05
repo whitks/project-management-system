@@ -24,7 +24,7 @@ useEffect(() => {
   if (currPoint === 5 && project && mentor && team.length >= 3 && !flag) {
     const sendTeam = async () => {
       try {
-        const res = await fetch("http://localhost/another/addteam.php", {
+        const res = await fetch("https://prback.ct.ws/another/addteam.php", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -49,7 +49,7 @@ useEffect(() => {
           const interval = setInterval(async () => {
             try {
               const res2 = await fetch(
-                "http://localhost/another/checkapprovals.php",
+                "https://prback.ct.ws/another/checkapprovals.php",
                 {
                   method: "POST",
                   headers: { "Content-Type": "application/json" },

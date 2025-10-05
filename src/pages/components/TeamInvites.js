@@ -9,7 +9,7 @@ function TeamInvites({ setCurrPoint }) {
     const fetchRequests = async () => {
         console.log("YES")
       try {
-        const res = await fetch("http://localhost/another/whowantsme.php", {
+        const res = await fetch("https://prback.ct.ws/another/whowantsme.php", {
           method: "GET",
           credentials: "include",
         });
@@ -29,7 +29,7 @@ function TeamInvites({ setCurrPoint }) {
 
   const handleApprove = async (team_id) => {
     try {
-      const res = await fetch("http://localhost/another/approveteam.php", {
+      const res = await fetch("https://prback.ct.ws/another/approveteam.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ team_id }),

@@ -32,7 +32,7 @@ function SelectMentor({ setCurrPoint, mentor, setMentor }) {
   useEffect(() => {
     const fetchMentors = async () => {
       try {
-        const response = await fetch("http://localhost/another/mentors.php", {
+        const response = await fetch("https://prback.ct.ws/another/mentors.php", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           credentials: "include"

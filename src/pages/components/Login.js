@@ -19,7 +19,7 @@ function Login() {
     });
     async function handleGoogleLogin(access_token){
 
-      const response = await fetch("http://localhost/another/login.php", {
+      const response = await fetch("https://prback.ct.ws/another/login.php", {
         method: "POST",
         headers:{"Content-Type": "application/json"},
         credentials: 'include',
@@ -52,7 +52,7 @@ function Login() {
         setError("Please enter college email.")
         return
       }
-      const response = await fetch("http://localhost/another/login.php", {
+      const response = await fetch("https://prback.ct.ws/another/login.php", {
         method: "POST",
           headers: {
         "Content-Type": "application/json"

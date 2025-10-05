@@ -48,7 +48,7 @@ const WeeklyForm = ({ initial = {}, onClose }) => {
     };
 
     try {
-      const res = await fetch("http://localhost/another/handleforms.php", {
+      const res = await fetch("https:/prback.ct.ws/another/handleforms.php", {
         method: "POST",
         credentials: "include",
         headers: { "Content-Type": "application/json" },

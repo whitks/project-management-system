@@ -16,7 +16,7 @@ const TeamInfo = () => {
       setError(null);
       console.log('TeamInfo: fetching team data...');
       try {
-        const res = await fetch('http://localhost/another/getTeam.php', { method: 'GET', credentials: 'include' });
+        const res = await fetch('https://prback.ct.ws/another/getTeam.php', { method: 'GET', credentials: 'include' });
         const data = await res.json();
         console.log('TeamInfo: response', data);
         if (!data || data.status !== 'success') {

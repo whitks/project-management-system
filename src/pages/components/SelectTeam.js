@@ -39,7 +39,7 @@ function SelectTeam({setCurrPoint, team, setTeam}) {
   }
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost/another/members.php", {
+      const response = await fetch("https://prback.ct.ws/another/members.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: 'include'
